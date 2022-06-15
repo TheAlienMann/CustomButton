@@ -71,8 +71,6 @@ public class CustomButton: UIView {
     imageViewWidth.priority = .init(rawValue: 999)
     imageViewWidth.isActive = true
 
-    setupButtonIcon()
-
     imageView.contentMode = .scaleAspectFit
     return imageView
   }()
