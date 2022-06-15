@@ -2,20 +2,20 @@ import UIKit
 
 public class CustomButton: UIView {
 
-  enum ImageOptions {
+  public enum ImageOptions {
     case sfSymbol
     case assetImage
     case none
   }
 
-  let title: String
-  let subtitle: String?
-  let icon: String?
-  let titleFontSize: CGFloat
-  let subtitleFontSize: CGFloat?
-  let imageOptions: ImageOptions
-  let imageName: String
-  let action: () -> Void
+  public let title: String
+  public let subtitle: String?
+  public let icon: String?
+  public let titleFontSize: CGFloat
+  public let subtitleFontSize: CGFloat?
+  public let imageOptions: ImageOptions
+  public let imageName: String
+  public let action: () -> Void
 
 
   lazy var horizontalStack: UIStackView = {
@@ -73,7 +73,7 @@ public class CustomButton: UIView {
     imageViewWidth.isActive = true
 
     setupButtonIcon()
-    
+
 //    imageView.image = UIImage(systemName: self.icon!)
 //    imageView.image = makeImage()
 //    imageView.image = UIImage(named: "ss")
@@ -84,7 +84,7 @@ public class CustomButton: UIView {
   var tapGesture: UITapGestureRecognizer!
   lazy var horizontalViews: [UIView] = [buttonLabel]
 
-  init(title: String,
+  public init(title: String,
        subtitle: String? = nil,
        icon: String? = nil,
        titleFontSize: CGFloat,
@@ -120,11 +120,14 @@ public class CustomButton: UIView {
   }
 
   private func setupButtonIcon() {
+    guard let icon = icon else {
+      return
+    }
     switch imageOptions {
       case .sfSymbol:
-        buttonIcon.image = UIImage(systemName: imageName)
+        buttonIcon.image = UIImage(systemName: icon)
       case .assetImage:
-        buttonIcon.image = UIImage(named: imageName)
+        buttonIcon.image = UIImage(named: icon)
       case .none:
         buttonIcon.image = makeImage()
     }
