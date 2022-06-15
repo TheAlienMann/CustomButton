@@ -51,7 +51,7 @@ public class CustomButton: UIView {
     }
     label.attributedText = NSAttributedString(attributedString: titleAttributes)
 
-    label.textAlignment = .left
+    label.textAlignment = .center
     label.contentMode = .left
     label.setContentHuggingPriority(.init(rawValue: 249), for: .horizontal)
     label.setContentHuggingPriority(.init(rawValue: 251), for: .vertical)
@@ -73,9 +73,6 @@ public class CustomButton: UIView {
 
     setupButtonIcon()
 
-//    imageView.image = UIImage(systemName: self.icon!)
-//    imageView.image = makeImage()
-//    imageView.image = UIImage(named: "ss")
     imageView.contentMode = .scaleAspectFit
     return imageView
   }()
@@ -117,16 +114,15 @@ public class CustomButton: UIView {
   }
 
   private func setupButtonIcon() {
-    guard let icon = icon else {
-      return
-    }
-    switch imageOptions {
-      case .sfSymbol:
+    switch (imageOptions, icon) {
+      case let (.sfSymbol, .some(icon)):
         buttonIcon.image = UIImage(systemName: icon)
-      case .assetImage:
+      case let (.assetImage, .some(icon)):
         buttonIcon.image = UIImage(named: icon)
-      case .none:
+      case (.none, .none):
         buttonIcon.image = makeImage()
+      default:
+        break
     }
   }
 
