@@ -98,9 +98,9 @@ public class CustomButton: UIView {
     super.init(frame: .zero)
 
     if icon != nil {
+      setupButtonIcon()
       horizontalViews.insert(buttonIcon, at: 0)
     }
-    setupButtonIcon()
     addSubview(horizontalStack)
     setupConstraints()
 
@@ -115,13 +115,12 @@ public class CustomButton: UIView {
   }
 
   private func setupButtonIcon() {
-    switch (imageOptions, icon) {
-      case let (.sfSymbol, .some(icon)):
-        buttonIcon.image = UIImage(systemName: icon)
-      case let (.assetImage, .some(icon)):
-        buttonIcon.image = UIImage(named: icon)
-      default:
-//      case (.none, .none):
+    switch imageOptions {
+      case .sfSymbol:
+        buttonIcon.image = UIImage(systemName: icon!)
+      case .assetImage:
+        buttonIcon.image = UIImage(named: icon!)
+      case .none:
         buttonIcon.image = makeImage()
     }
   }
