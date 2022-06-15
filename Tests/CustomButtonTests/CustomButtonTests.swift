@@ -2,10 +2,7 @@ import XCTest
 @testable import CustomButton
 
 final class CustomButtonTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(CustomButton().text, "Hello, World!")
+    func testExample() {
+      XCTAssertEqual(1 + 1, 2)
     }
 }
