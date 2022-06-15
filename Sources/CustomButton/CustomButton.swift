@@ -14,7 +14,6 @@ public class CustomButton: UIView {
   public let titleFontSize: CGFloat
   public let subtitleFontSize: CGFloat?
   public let imageOptions: ImageOptions
-  public let imageName: String
   public let action: () -> Void
 
 
@@ -90,7 +89,6 @@ public class CustomButton: UIView {
        titleFontSize: CGFloat,
        subtitleFontSize: CGFloat? = nil,
        imageOptions: ImageOptions = .none,
-       imageName: String,
        action: @escaping () -> Void)
   {
     self.title = title
@@ -99,7 +97,6 @@ public class CustomButton: UIView {
     self.titleFontSize = titleFontSize
     self.subtitleFontSize = subtitleFontSize
     self.imageOptions = imageOptions
-    self.imageName = imageName
     self.action = action
     super.init(frame: .zero)
 
