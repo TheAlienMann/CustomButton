@@ -100,6 +100,7 @@ public class CustomButton: UIView {
     if icon != nil {
       horizontalViews.insert(buttonIcon, at: 0)
     }
+    setupButtonIcon()
     addSubview(horizontalStack)
     setupConstraints()
 
@@ -119,10 +120,9 @@ public class CustomButton: UIView {
         buttonIcon.image = UIImage(systemName: icon)
       case let (.assetImage, .some(icon)):
         buttonIcon.image = UIImage(named: icon)
-      case (.none, .none):
-        buttonIcon.image = makeImage()
       default:
-        break
+//      case (.none, .none):
+        buttonIcon.image = makeImage()
     }
   }
 
