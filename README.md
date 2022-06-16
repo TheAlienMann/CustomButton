@@ -16,4 +16,6 @@ Here is a smaple of when you have `title`, no `subtitle`, for the `icon` you hav
 ![alt text](./Assets/05.png)
 
 a screenshot of it on iPhone 13 simulator.
-![alt text](./Assets/06.png)
+
+<img src="./Assets/06.png" width="200">
+<!-- ![alt text](./Assets/06.png) -->
