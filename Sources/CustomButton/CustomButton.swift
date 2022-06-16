@@ -14,7 +14,7 @@ public class CustomButton: UIView {
   public let titleFontSize: CGFloat
   public let subtitleFontSize: CGFloat?
   public let imageOptions: ImageOptions
-  public let action: () -> Void
+  public var action: (() -> Void)? = nil
 
 
   lazy var horizontalStack: UIStackView = {
@@ -83,8 +83,7 @@ public class CustomButton: UIView {
        icon: String? = nil,
        titleFontSize: CGFloat,
        subtitleFontSize: CGFloat? = nil,
-       imageOptions: ImageOptions = .none,
-       action: @escaping () -> Void)
+       imageOptions: ImageOptions = .none)
   {
     self.title = title
     self.subtitle = subtitle
@@ -92,7 +91,6 @@ public class CustomButton: UIView {
     self.titleFontSize = titleFontSize
     self.subtitleFontSize = subtitleFontSize
     self.imageOptions = imageOptions
-    self.action = action
     super.init(frame: .zero)
 
     if icon != nil {
@@ -108,7 +106,7 @@ public class CustomButton: UIView {
   }
 
   @objc private func didTap() {
-    action()
+    action?()
 //    print(#line, #file.components(separatedBy: "/").last!, "tapped")
   }
 
