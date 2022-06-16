@@ -14,3 +14,6 @@ Here is a smaple of when you have `title`, no `subtitle`, for the `icon` you hav
 
 Here is a smaple of when you have `title`, no `subtitle`, for the `icon` you have entered the name of an SF Symbol. the one shown here is `square.and.arrow.up.circle.fill`. 
 ![alt text](./Assets/05.png)
+
+a screenshot of it on iPhone 13 simulator.
+![alt text](./Assets/06.png)

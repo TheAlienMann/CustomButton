@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CustomButton",
+        "repositoryURL": "https://github.com/TheAlienMann/CustomButton",
+        "state": {
+          "branch": null,
+          "revision": "ec24512ffa44396cf06aac9cc9f1576fec23f47e",
+          "version": "0.0.8"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
