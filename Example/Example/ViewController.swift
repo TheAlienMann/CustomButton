@@ -11,31 +11,44 @@ import CustomButton
 class ViewController: UIViewController {
 
   lazy var testButton: CustomButton = {
-    let button = CustomButton(title: "Register", titleFontSize: 17, action: handleRegister)
+    let button = CustomButton(title: "Register", titleFontSize: 17)
+    button.action = handleRegister
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
 
   lazy var testButton2: CustomButton = {
-    let button = CustomButton(title: "Register", subtitle: "would you liek to register in our awesome app?!", icon: nil, titleFontSize: 17, subtitleFontSize: 12, imageOptions: .none, action: handleRegister)
+    let button = CustomButton(title: "Register", subtitle: "would you like to register in our awesome app?!", icon: nil, titleFontSize: 17, subtitleFontSize: 12, imageOptions: .none)
+    button.action = handleRegister
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
 
   lazy var testButton3: CustomButton = {
-    let button = CustomButton(title: "Register", subtitle: nil, icon: "something that doesn't exist.", titleFontSize: 17, subtitleFontSize: nil, imageOptions: .none, action: handleRegister)
+    let button = CustomButton(title: "Register", subtitle: nil, icon: "something that doesn't exist.", titleFontSize: 17, subtitleFontSize: nil, imageOptions: .none)
+    button.action = handleRegister
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
 
   lazy var testButton4: CustomButton = {
-    let button = CustomButton(title: "Register", subtitle: nil, icon: "ss", titleFontSize: 17, subtitleFontSize: nil, imageOptions: .assetImage, action: handleRegister)
+    let button = CustomButton(title: "Register", subtitle: nil, icon: "ss", titleFontSize: 17, subtitleFontSize: nil, imageOptions: .assetImage)
+    button.action = handleRegister
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
 
   lazy var testButton5: CustomButton = {
-    let button = CustomButton(title: "Register", subtitle: nil, icon: "square.and.arrow.up.circle.fill", titleFontSize: 17, subtitleFontSize: nil, imageOptions: .sfSymbol, action: handleRegister)
+    let button = CustomButton(title: "Register", subtitle: nil, icon: "square.and.arrow.up.circle.fill", titleFontSize: 17, subtitleFontSize: nil, imageOptions: .sfSymbol)
+    button.action = handleRegister
+    button.translatesAutoresizingMaskIntoConstraints = false
+    return button
+  }()
+
+  lazy var testButton6: CustomButton = {
+    let button = CustomButton(title: "Register", subtitle: nil, icon: "square.and.arrow.up.circle.fill", titleFontSize: 17, subtitleFontSize: nil, imageOptions: .sfSymbol)
+    button.action = handleRegister
+    button.isEnabled = false
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
@@ -50,6 +63,7 @@ class ViewController: UIViewController {
     view.addSubview(testButton3)
     view.addSubview(testButton4)
     view.addSubview(testButton5)
+    view.addSubview(testButton6)
     setupConstraints()
   }
 
@@ -79,6 +93,11 @@ class ViewController: UIViewController {
       testButton5.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8),
       testButton5.topAnchor.constraint(equalTo: testButton4.bottomAnchor, constant: 38),
       testButton5.heightAnchor.constraint(equalToConstant: 44),
+
+      testButton6.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+      testButton6.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8),
+      testButton6.topAnchor.constraint(equalTo: testButton5.bottomAnchor, constant: 38),
+      testButton6.heightAnchor.constraint(equalToConstant: 44),
       ])
   }
 
