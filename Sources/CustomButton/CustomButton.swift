@@ -15,6 +15,12 @@ public class CustomButton: UIView {
   public let subtitleFontSize: CGFloat?
   public let imageOptions: ImageOptions
   public var action: (() -> Void)? = nil
+  public var isEnabled: Bool = true {
+    didSet {
+      isUserInteractionEnabled = isEnabled
+      backgroundColor = isEnabled ? UIColor.clear : UIColor.gray
+    }
+  }
 
 
   lazy var horizontalStack: UIStackView = {
@@ -30,7 +36,7 @@ public class CustomButton: UIView {
     stack.setContentHuggingPriority(.init(rawValue: 250), for: .vertical)
     stack.setContentCompressionResistancePriority(.init(rawValue: 750), for: .horizontal)
     stack.setContentCompressionResistancePriority(.init(rawValue: 750), for: .vertical)
-    stack.insetsLayoutMarginsFromSafeArea = true
+//    stack.insetsLayoutMarginsFromSafeArea = true
     return stack
   }()
 
@@ -107,7 +113,6 @@ public class CustomButton: UIView {
 
   @objc private func didTap() {
     action?()
-//    print(#line, #file.components(separatedBy: "/").last!, "tapped")
   }
 
   private func setupButtonIcon() {
