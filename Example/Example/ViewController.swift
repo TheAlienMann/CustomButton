@@ -18,7 +18,11 @@ class ViewController: UIViewController {
   }()
 
   lazy var testButton2: CustomButton = {
+<<<<<<< HEAD
     let button = CustomButton(title: "Register", subtitle: "would you like to register in our awesome app?!", icon: nil, titleFontSize: 17, subtitleFontSize: 12, imageOptions: .none)
+=======
+    let button = CustomButton(title: "Register", subtitle: "would you liek to register in our awesome app?!", icon: nil, titleFontSize: 17, subtitleFontSize: 12, imageOptions: .none)
+>>>>>>> d4ec15507652d5bc4f28bee6bceb40579fb429c3
     button.action = handleRegister
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
